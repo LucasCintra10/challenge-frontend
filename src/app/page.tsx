@@ -1,95 +1,55 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import Header from "@/components/Header";
+import Image from "next/image";
+import styles from "./page.module.css";
+
+import { useState } from "react";
+import Footer from "@/components/Footer";
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <Header />
+      <div className={styles.welcome}>
+        <div className={styles.desc}>
+          <h1>Bem vindo a Mortydex !!</h1>
+          <p>O melhor lugar para encontrar seu Morty</p>
         </div>
-      </div>
 
-      <div className={styles.center}>
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/assets/morty3.png"
+          alt="Morty fazendo gesto de cumprimento"
+          width={610}
+          height={610}
+          className={styles.img}
         />
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <button className={styles.btn}>
+        Buscar meu Morty
+        <Image
+          src="/assets/arrow-icon.svg"
+          alt="Seta apontando para a direita"
+          width={28}
+          height={28}
+          className={styles.arrow}
+        />
+      </button>
+      <div className={styles.warning}>
+        <Image
+          src="/assets/morty4.png"
+          alt="Morty fazendo gesto de cumprimento"
+          width={610}
+          height={610}
+          className={styles.img}
+        />
+        <div className={styles.desc}>
+          <h1>Cuidado !!</h1>
+          <p>Você está sendo OBSERVADO!</p>
+        </div>
       </div>
+      <Footer />
     </main>
-  )
+  );
 }
