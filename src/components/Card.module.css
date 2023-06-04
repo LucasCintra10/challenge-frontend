@@ -15,7 +15,7 @@
   font-size: 1rem;
   font-weight: 600;
   background-color: var(--cor-botao);
-  border-radius: 1rem;
+  border-radius: 1rem 1rem 0 0;
   border: none;
   box-shadow: 0 0 10px var(--cor-branca);
 }
@@ -45,9 +45,7 @@
 }
 .content {
   background-color: var(--cor-botao);
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 0 10px var(--cor-branca);
+  border-radius: 0 0 1rem 1rem;
 }
 .list {
   display: flex;
@@ -55,13 +53,18 @@
   color: var(--cor-branca);
 }
 .item {
+  box-sizing: border-box;
   width: 100%;
   display: flex;
   justify-content: space-between;
   text-align: center;
-  margin: 0.5rem 0;
+  align-items: center;
+  padding: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
+}
+.item:hover {
+  background-color: var(--cor-botao-hover);
 }
 
 @media (min-width: 768px) {

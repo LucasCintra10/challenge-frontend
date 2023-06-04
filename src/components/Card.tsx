@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { Personagem } from "@/app/models/personagem";
-import { useEffect, useState } from "react";
-import api from "@/app/lib/axios";
 import styles from "./Card.module.css";
 import * as Accordion from "@radix-ui/react-accordion";
 import Image from "next/image";
@@ -57,7 +55,9 @@ function Card(props: Personagem) {
                   width={16}
                   height={16}
                 />
-                <p>Especie: {props.species == "Human" ? "Humano" : props.species}</p>
+                <p>
+                  Especie: {props.species == "Human" ? "Humano" : props.species}
+                </p>
                 <Image
                   src="/assets/dot-icon.svg"
                   alt="Seta para baixo"
@@ -72,7 +72,9 @@ function Card(props: Personagem) {
                   width={16}
                   height={16}
                 />
-                <p>Genero: {props.gender == "Male" ? "Masculino" : "Feminino"}</p>
+                <p>
+                  Genero: {props.gender == "Male" ? "Masculino" : "Feminino"}
+                </p>
                 <Image
                   src="/assets/dot-icon.svg"
                   alt="Seta para baixo"
@@ -87,7 +89,12 @@ function Card(props: Personagem) {
                   width={16}
                   height={16}
                 />
-                <p>Origem: {props.origin.name}</p>
+                <p>
+                  Origem:{" "}
+                  {props.origin.name == "unknown"
+                    ? "Desconhecida"
+                    : props.origin.name}
+                </p>
                 <Image
                   src="/assets/dot-icon.svg"
                   alt="Seta para baixo"
@@ -102,7 +109,12 @@ function Card(props: Personagem) {
                   width={16}
                   height={16}
                 />
-                <p>Localização: {props.location.name}</p>
+                <p>
+                  Localização:{" "}
+                  {props.location.name == "unknown"
+                    ? "Desconhecida"
+                    : props.location.name}
+                </p>
                 <Image
                   src="/assets/dot-icon.svg"
                   alt="Seta para baixo"

@@ -5,7 +5,6 @@ import styles from "./page.module.css";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-
   return (
     <main className={styles.main}>
       <Header />
@@ -23,7 +22,7 @@ export default function Home() {
           className={styles.img}
         />
       </div>
-      <a href="http://localhost:3000/mortydex"className={styles.btn}>
+      <a href="http://localhost:3000/mortydex" className={styles.btn}>
         Buscar
         <Image
           src="/assets/arrow-icon.svg"

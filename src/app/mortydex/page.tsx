@@ -4,24 +4,31 @@ import Header from "@/components/Header";
 import styles from "./page.module.css";
 import Card from "@/components/Card";
 import Image from "next/image";
-import { FormEvent, use, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import api from "@/app/lib/axios";
 import { Personagem } from "../models/personagem";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Mortydex() {
   const [nome, setNome] = useState("");
   const [personagens, setPersonagens] = useState<Personagem[]>([]);
 
-  function getPersonagem( event : FormEvent) {
+  function getPersonagem(event: FormEvent) {
     event.preventDefault();
-    api.get(`/?name=${nome}`).then((response) => {
-      setPersonagens(response.data.results);
-    });
+    api
+      .get(`/?name=${nome}`)
+      .then((response) => {
+        setPersonagens(response.data.results);
+      })
+      .catch((error) => {
+        toast.error("Personagem não encontrado");
+      });
   }
 
   return (
     <main className={styles.main}>
       <Header />
+      <Toaster />
       <div>
         <h1 className={styles.title}>Quem você está procurando ?</h1>
         <form className={styles.searchbar} onSubmit={getPersonagem}>
