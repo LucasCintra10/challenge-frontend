@@ -52,14 +52,13 @@
 .list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     color: var(--cor-branca);
 }
 .item {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    text-align: center;
     margin: 0.5rem 0;
     font-size: 1rem;
     font-weight: 600;
