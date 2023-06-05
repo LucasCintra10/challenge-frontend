@@ -22,13 +22,13 @@
 
     Execute o seguinte comando para instalar as dependências do projeto:
 
-    bash
+    
 
         npm install
 
     ou
 
-    bash
+    
 
         yarn install
 
@@ -36,13 +36,13 @@
 
     Após a instalação das dependências e a configuração das variáveis de ambiente, execute o seguinte comando para iniciar o servidor de desenvolvimento:
 
-bash
+
 
     npm run dev
 
 ou
 
-bash
+
 
     yarn dev
 
