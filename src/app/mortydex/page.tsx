@@ -10,9 +10,14 @@ import { Personagem } from "../models/personagem";
 import toast, { Toaster } from "react-hot-toast";
 
 export default function Mortydex() {
+
+  /* Hook para armazenar o nome do personagem */
   const [nome, setNome] = useState("");
+
+  /* Hook para armazenar os personagens */
   const [personagens, setPersonagens] = useState<Personagem[]>([]);
 
+  /* Função para buscar o personagem na API*/
   function getPersonagem(event: FormEvent) {
     event.preventDefault();
     api
@@ -20,6 +25,7 @@ export default function Mortydex() {
       .then((response) => {
         setPersonagens(response.data.results);
       })
+      /* Caso o personagem não seja encontrado, exibe um toast */
       .catch((error) => {
         toast.error("Personagem não encontrado");
       });
@@ -31,6 +37,7 @@ export default function Mortydex() {
       <Toaster />
       <div>
         <h1 className={styles.title}>Quem você está procurando ?</h1>
+        {/* Formulário para buscar o personagem */}
         <form className={styles.searchbar} onSubmit={getPersonagem}>
           <input
             type="text"
@@ -48,6 +55,7 @@ export default function Mortydex() {
           </button>
         </form>
       </div>
+      {/* Grid para exibir os personagens */}
       <div className={styles.grid}>
         {personagens.map((personagem) => (
           <Card key={personagem.id} {...personagem} />

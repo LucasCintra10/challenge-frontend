@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className={styles.main}>
+      {/* Componente Cabeçalho */}
       <Header />
       <div className={styles.welcome}>
         <div className={styles.desc}>
@@ -22,6 +23,7 @@ export default function Home() {
           className={styles.img}
         />
       </div>
+      {/* Botão para acessar a página de busca */}
       <a href="http://localhost:3000/mortydex" className={styles.btn}>
         Buscar
         <Image
@@ -45,6 +47,7 @@ export default function Home() {
           <p>Você está sendo OBSERVADO!</p>
         </div>
       </div>
+      {/* Componente Rodapé */}
       <Footer />
     </main>
   );
