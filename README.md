@@ -22,28 +22,16 @@
 
     Execute o seguinte comando para instalar as dependências do projeto:
 
-    
-
         npm install
-
-    ou
-
-    
-
+            ou
         yarn install
 
 ## Uso
 
     Após a instalação das dependências e a configuração das variáveis de ambiente, execute o seguinte comando para iniciar o servidor de desenvolvimento:
 
-
-
     npm run dev
-
-ou
-
-
-
+        ou
     yarn dev
 
 Abra o navegador e acesse http://localhost:3000 para visualizar o site.
